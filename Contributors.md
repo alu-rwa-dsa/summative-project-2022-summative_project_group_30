@@ -24,7 +24,6 @@ Bug fixes
 Issue Triage
 Release management
 We are glad you want to contribute to our project.
-The best way to reach us with a question when contributing is to ask on TODO.
 
 
 
