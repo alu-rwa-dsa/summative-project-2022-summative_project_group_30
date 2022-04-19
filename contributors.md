@@ -12,7 +12,7 @@ Use this worksheet to assign your peer evaluation points among group members bas
 4. Divide the points in line 2 among the group members listed in the table based on the amount they contributed to the final project. Write these amounts next to each person’s name in the table (column 2)
 Names of Group Members (list all)
 1. Alice Rutayisire
-2. Dekrah Mokorah
+2. Decra Kerubo
 3. Fareedah Okunade
 4. Tafara Kasparov
 5. Raissa Kinkoh
