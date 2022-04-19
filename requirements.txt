@@ -1,0 +1,11 @@
+mongoengine~=0.24.0
+passlib~=1.7.4
+fastapi~=0.75.0
+starlette~=0.17.1
+future~=0.18.2
+uvicorn~=0.15.0
+requests~=2.26.0
+email~=6.0.0a1
+pendulum~=2.1.2
+pytz~=2021.3
+db~=0.1.1
