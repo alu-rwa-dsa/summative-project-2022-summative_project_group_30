@@ -12,9 +12,6 @@ This is an online bus booking system
    ```
 2. Install the dependencies
    ```sh
-   cd DSA-Final-Solution
-   ```
-   ```sh
    pip install -r requirements
    ```
 3. Open the main file, in the root directory
