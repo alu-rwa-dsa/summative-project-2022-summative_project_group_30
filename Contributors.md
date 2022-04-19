@@ -8,7 +8,7 @@ c. Routinely clearing data and sorting information.
 **
 
 The following are the contributors to this project:
-1. Alice Rutayisire- Notification model incorpporation
+1. Alice Rutayisire- Notification model incorporation
 2. Decra Kerubo- Database Implementation
 3. Fareedah Okunade- Tracking Method incoporation
 4. Raissah Kinkoh- Test Cases
