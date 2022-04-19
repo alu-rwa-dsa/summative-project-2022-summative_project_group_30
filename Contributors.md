@@ -8,11 +8,11 @@ c. Routinely clearing data and sorting information.
 **
 
 The following are the contributors to this project:
-1. Alice Rutayisire- Notification model incorporation
+1. Alice Rutayisire- Bookings and Notification model incorporation
 2. Decra Kerubo- Database Implementation
-3. Fareedah Okunade- Tracking Method incoporation
+3. Fareedah Okunade- Routes Tracking Method incoporation
 4. Raissah Kinkoh- Test Cases
-5. Tafara Kasparov- Graphical User Interface
+5. Tafara Kasparov- Graphical User Interface Frontend Application design.
 
 **Ways to Contribute
 **
