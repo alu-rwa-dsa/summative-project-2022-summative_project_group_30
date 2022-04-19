@@ -5,7 +5,7 @@ Use this worksheet to assign your peer evaluation points among group members bas
 2. Multiply the result of line 1 by 100 _500_
 3. Write the names of each group member in the table below:
     Alice Rutayisire
-    Dekrah Mokorah
+    Decra Kerubo
     Fareedah Okunade
     Tafara Kasparov
     Raissa Kinkoh
