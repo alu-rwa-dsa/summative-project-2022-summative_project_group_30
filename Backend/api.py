@@ -1,14 +1,17 @@
 from fastapi import FastAPI, HTTPException, status, Body
 from starlette.middleware.cors import CORSMiddleware
-from configs import db_conn
 from Backend.db_model import User, Bus
 from Backend.allocate_passengers import fetch_buses, allocate_passenger, check_time
 from Backend.user_aunthetication import verify_password, hash_password
-
+from configs.db_conn import connect_db
 
 app = FastAPI()
 
-db_conn.connect_db('busSystem')
+
+def get_db():
+    connect_db()
+
+
 
 origins = [
     "*"
@@ -132,4 +135,3 @@ async def fetch_user_details(email_address: str):
 
     except Exception:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="None")
-

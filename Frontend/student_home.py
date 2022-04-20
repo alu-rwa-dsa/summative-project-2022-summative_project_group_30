@@ -86,7 +86,7 @@ def student_home_window():
                             font=("Times", "18", "bold"))
         seat_number.grid(row=4, columnspan=2, column=1, pady=5)
 
-        departure_time = Label(frame_student_home, width=15, text=deadline_times[user_data['departure_time']],
+        departure_time = Label(frame_student_home, width=15, text=user_data['departure_time'],
                                borderwidth=1, relief="solid",
                                font=("Times", "18", "bold"))
         departure_time.grid(row=5, columnspan=2, column=1, pady=5)

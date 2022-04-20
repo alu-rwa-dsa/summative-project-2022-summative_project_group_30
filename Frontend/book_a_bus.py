@@ -7,6 +7,7 @@ from Frontend.choose_a_bus import fetch_bus_abc_def
 from Frontend.window_obj import ws
 import requests
 
+
 try:
     with open('email_address', 'r') as f:
         EMAIL_ADDRESS = f.readlines()[0]

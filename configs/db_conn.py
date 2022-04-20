@@ -1,13 +1,16 @@
-from mongoengine import connect
+import mongoengine
 
 
-def connect_db(database_name, test=False):
+def connect_db(test=False):
     try:
+        database_name = "busSystemDSA"
         if test:
             database_name = f"{database_name}Test"
-            print("here")
-        URI = f"mongodb+srv://tafarakasparovmhangami:tafara@cluster0.qjovi.mongodb.net/{database_name}?retryWrites=true&w=majority"
-        connect(host=URI)
 
+        URI = f"mongodb+srv://tafarakasparovmhangami:tafara@cluster0.qjovi.mongodb.net/{database_name}?retryWrites=true&w=majority"
+        mongoengine.register_connection(alias="busSystem", name=database_name, host=URI)
+        print("working")
     except Exception as e:
         print(e)
+
+

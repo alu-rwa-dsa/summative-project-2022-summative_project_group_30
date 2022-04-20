@@ -1,14 +1,6 @@
 from datetime import datetime as dt
 from mongoengine import *
 
-from configs.db_conn import connect_db
-
-
-try:
-    connect_db('busSystemDSA')
-except Exception as e:
-    print(e)
-
 
 class User(Document):
     username = StringField(required=True, max_length=30, unique=True)
@@ -19,7 +11,7 @@ class User(Document):
     timestamp = DateTimeField(default=dt.now())
     meta = {
         'auto-create-index': True,
-        'alias': 'bus-system',
+        'db_alias': 'busSystem',
         'allow_inheritance': True
     }
 
@@ -30,3 +22,9 @@ class Bus(Document):
     name = StringField(unique=True)
     capacity = IntField()
     passengers = ListField()
+    meta = {
+        'auto-create-index': True,
+        'db_alias': 'busSystem',
+        'allow_inheritance': True
+    }
+

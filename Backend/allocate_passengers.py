@@ -1,6 +1,6 @@
 import json
 from queue import Queue
-from Backend.db_model import *
+from Backend.db_model import Bus
 from datetime import datetime as dt
 from datetime import timedelta
 
@@ -15,15 +15,15 @@ departure_times = {
 # Checking time period
 def check_time(bus_obj):
     current_time = dt.now()
-    if bus_obj.last_check_time < departure_times["morning"] <= current_time <= departure_times["afternoon"]:
+    if bus_obj.last_check_time < departure_times["morning"] <= current_time < departure_times["afternoon"]:
         bus_obj.update(passengers=[], last_check_time=dt.now())
         Bus.objects.update(departure_period="afternoon")
 
-    elif bus_obj.last_check_time < departure_times["afternoon"] <= current_time <= departure_times["evening"]:
+    elif bus_obj.last_check_time < departure_times["afternoon"] <= current_time < departure_times["evening"]:
         bus_obj.update(passengers=[], last_check_time=dt.now())
         Bus.objects.update(departure_period="evening")
 
-    elif bus_obj.last_check_time < departure_times["evening"] <= current_time <= departure_times["morning"] + timedelta(
+    elif bus_obj.last_check_time < departure_times["evening"] <= current_time < departure_times["morning"] + timedelta(
             days=1):
         bus_obj.update(passengers=[], last_check_time=dt.now())
         Bus.objects.update(departure_period="morning")

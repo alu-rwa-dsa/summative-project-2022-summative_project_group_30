@@ -3,9 +3,14 @@ from tkinter import messagebox
 from requests import HTTPError
 import requests
 from Backend.db_model import *
+from Backend.main import run_api
 from Frontend.window_obj import ws
 from Frontend.student_home import student_home_window
 from datetime import datetime as dt
+
+from configs.db_conn import connect_db
+
+connect_db()
 
 
 def create_bus_obj():
@@ -15,14 +20,16 @@ def create_bus_obj():
         "afternoon": dt.strptime(f"{date_str} 12:45:00", "%d/%m/%Y %H:%M:%S"),
         "evening": dt.strptime(f"{date_str} 17:30:00", "%d/%m/%Y %H:%M:%S")
     }
-    if dt.now() <= departure_times['morning']:
-        period = "afternoon"
 
-    elif dt.now() >= departure_times['afternoon']:
-        period = "evening"
+    def get_period():
+        if dt.now() < departure_times['morning']:
+            return "morning"
 
-    elif dt.now() >= departure_times['evening']:
-        period = "morning"
+        if dt.now() < departure_times['afternoon']:
+            return "afternoon"
+
+        if dt.now() < departure_times['evening']:
+            return "evening"
 
     bus_obj = Bus.objects().first()
 
@@ -31,7 +38,7 @@ def create_bus_obj():
             bus = Bus(
                 name=f"ABC-DEF-{i}",
                 capacity=30,
-                departure_period=period
+                departure_period=get_period()
             )
             bus.save()
 
@@ -137,6 +144,3 @@ def login_window():
     sub.grid(row=3, column=2, pady=10)
 
     ws.mainloop()
-
-
-

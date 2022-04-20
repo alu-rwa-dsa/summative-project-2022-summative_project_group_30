@@ -1,6 +1,8 @@
 import multiprocessing
+from configs.db_conn import connect_db
 
 if __name__ == '__main__':
+    connect_db()
     from Backend.main import run_api
     from Frontend.login import login_window
 
